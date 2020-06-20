@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const Cotizacion = ({ resultado }) => {
   //Cuando se tenga un objeto vacio no hacer nada
@@ -23,6 +24,11 @@ const Cotizacion = ({ resultado }) => {
       </Info>
     </ResultadoDiv>
   );
+};
+
+//PropTypes
+Cotizacion.propTypes = {
+  resultado: PropTypes.object.isRequired,
 };
 
 //Styles cotizacion

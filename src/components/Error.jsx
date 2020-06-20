@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const Error = ({ mensaje }) => {
   return <MensajeError>{mensaje}</MensajeError>;
+};
+
+//PropTypes
+Error.propTypes = {
+  mensaje: PropTypes.string.isRequired,
 };
 
 const MensajeError = styled.p`
