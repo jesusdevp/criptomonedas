@@ -1,27 +1,48 @@
 import React from "react";
+import styled from "@emotion/styled";
 
 const Cotizacion = ({ resultado }) => {
   //Cuando se tenga un objeto vacio no hacer nada
   if (Object.keys(resultado).length === 0) return null;
   return (
-    <div>
-      <p>
+    <ResultadoDiv>
+      <Precio>
         El precio es: <span>{resultado.PRICE}</span>{" "}
-      </p>
-      <p>
+      </Precio>
+      <Info>
         Precio mas alto del dia: <span>{resultado.HIGHDAY}</span>{" "}
-      </p>
-      <p>
+      </Info>
+      <Info>
         Precio mas bajo del dia: <span>{resultado.LOWDAY}</span>{" "}
-      </p>
-      <p>
+      </Info>
+      <Info>
         Variacion ultimas 24 horas: <span>{resultado.CHANGEPCT24HOUR}</span>{" "}
-      </p>
-      <p>
+      </Info>
+      <Info>
         Ultima actualizacion: <span>{resultado.LASTUPDATE}</span>{" "}
-      </p>
-    </div>
+      </Info>
+    </ResultadoDiv>
   );
 };
+
+//Styles cotizacion
+const ResultadoDiv = styled.div`
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
+const Info = styled.p`
+  font-size: 18px;
+  span {
+    font-weight: bold;
+  }
+`;
+
+const Precio = styled.p`
+  font-size: 30px;
+  span {
+    font-weight: bold;
+  }
+`;
 
 export default Cotizacion;
